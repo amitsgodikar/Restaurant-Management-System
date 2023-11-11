@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .calign {
+            text-align: center;
+            line-height: 1px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="calign">BIRYANI NEARBY</h1>
+    <h6 class="calign">+91 81528 93303    |    Vidyanagar, Hubli</h6>
+    <hr/>
+    <b>Date: </b>{{ order.date_time }}
+    <br>
+    <br><b>Customer Name: </b>{{ customer.name }}<br>
+    <br><b>Customer Mobile: </b>{{ customer.phone }}<br>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total Amount</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{result.name}}</td>
+            <td>{{result.quantity}}</td>
+            <td>{{result.price}}</td>
+            <td>{{result.amount}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <b>Total: </b>{{ total }}<br>
+    <br>
+    <b>Payment Mode: </b> {{ order.payment_mode }}
+</body>
+</html>
